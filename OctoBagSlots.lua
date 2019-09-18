@@ -1,6 +1,11 @@
+
+function countBagsSlots()
+    return GetContainerNumFreeSlots(0) + GetContainerNumFreeSlots(1) + GetContainerNumFreeSlots(2) + GetContainerNumFreeSlots(3) + GetContainerNumFreeSlots(4)
+end
+
 local function UpdateBagSlots(self, elapsed)
-    print("changement")
-    OctoBagSlotsFontString:SetText("55")
+    local slotsEmpty = countBagsSlots()
+    OctoBagSlotsFontString:SetText(slotsEmpty)
 end
 
 function OnLoad(self, event, ...)
@@ -21,7 +26,8 @@ function BagChange(self, event, ...)
             tile = true, tileSize = 8, edgeSize = 8,
             insets = { left = 1, right = 1, top = 1, bottom = 3 }
         })
-        local slotsEmpty = 55
+        local slotsEmpty = countBagsSlots()
+        print(slotsEmpty)
         OctoBagSlotsFontString:SetText(slotsEmpty)
         OctoBagSlotsFontString:SetTextColor(87, 213, 59, 1)
         OctoBagSlots:SetFrameLevel(10)
