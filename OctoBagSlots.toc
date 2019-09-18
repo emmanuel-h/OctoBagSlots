@@ -1,0 +1,8 @@
+## Interface: 11302
+## Title: OctoBagSlots
+## Version: 1.0
+## Notes: Display number of empty bag slots
+## Author: I'm an octopus
+
+OctoBagSlots.lua
+OctoBagSlots.xml
